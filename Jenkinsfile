@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Hello2') {
             steps {
-                git 'https://github.com/WakiwKK/MLDeploy.git'
+                git clone -b main 'https://github.com/WakiwKK/MLDeploy.git'
             }
         }
         stage('Hello3') {
