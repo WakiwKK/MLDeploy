@@ -5,8 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 checkout scm
-                def branchRevision = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
-                    echo "Branch Revision: ${branchRevision}"
+                echo "${sh(script: 'git rev-parse HEAD', returnStdout: true).trim()}"
             }
         }
         stage('Hello2') {
