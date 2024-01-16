@@ -18,7 +18,8 @@ pipeline {
         }
         stage('Hello2') {
             steps {
-                git clone https://github.com/WakiwKK/MLDeploy.git
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[ url: 'https://github.com/WakiwKK/MLDeploy.git']]]) 
+                sh "ls -lart ./*"
             }
         }
         stage('Hello3') {
