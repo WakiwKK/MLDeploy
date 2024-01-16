@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/develop']], userRemoteConfigs: [[url: 'https://github.com/WakiwKK/MLDeploy.git']]])
+                checkout scm
             }
         }
         stage('Hello2') {
