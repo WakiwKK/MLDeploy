@@ -24,7 +24,8 @@ pipeline {
         }
         stage('Hello3') {
             steps {
-                echo "Hello World20 ${BUILD_ID}" 
+                echo "Hello World20 ${BUILD_ID} ${WORKSPACE}" 
+                
             }
         }
         
