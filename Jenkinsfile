@@ -1,5 +1,13 @@
 pipeline {
     agent any
+    
+    environment{
+        BENTO_HOME = "${WORKSPACE}/bento_home"
+        BENTO_NAME = "your_bento_service_name"
+        BENTO_VERSION = "1.0.0"
+        DOCKER_REGISTRY_URL = "your.docker.registry"
+        DOCKER_IMAGE_NAME = "${DOCKER_REGISTRY_URL}/${BENTO_NAME}:${BENTO_VERSION}"
+    }
 
     stages {
         stage('Hello') {
@@ -10,7 +18,7 @@ pipeline {
         }
         stage('Hello2') {
             steps {
-                echo "${env}"
+                git 'https://github.com/WakiwKK/MLDeploy.git'
             }
         }
         stage('Hello3') {
