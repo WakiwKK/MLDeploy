@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Hello2') {
             steps {
-                echo "${env.BRANCH_NAME}"
+                echo "${env}"
             }
         }
         stage('Hello3') {
